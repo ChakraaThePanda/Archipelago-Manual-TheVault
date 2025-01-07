@@ -1,0 +1,811 @@
+[
+  {
+    "name": "Victory - The Vault Opened!",
+    "region": "The Vault",
+    "victory": true,
+    "category": [
+      "Win Condition"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 1",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 2",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 3",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 4",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 5",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 6",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 7",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 8",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 9",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 10",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 11",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 12",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 13",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 14",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 15",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 16",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 17",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 18",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 19",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 20",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 21",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 22",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 23",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 24",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 25",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 26",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 27",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 28",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 29",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 30",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 31",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 32",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 33",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 34",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 35",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 36",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 37",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 38",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 39",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 40",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 41",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 42",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 43",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 44",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 45",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 46",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 47",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 48",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 49",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 50",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 51",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 52",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 53",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 54",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 55",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 56",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 57",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 58",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 59",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 60",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 61",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 62",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 63",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 64",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 65",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 66",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 67",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 68",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 69",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 70",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 71",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 72",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 73",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 74",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 75",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 76",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 77",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 78",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 79",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 80",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 81",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 82",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 83",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 84",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 85",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 86",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 87",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 88",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 89",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 90",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 91",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 92",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 93",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 94",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 95",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 96",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 97",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 98",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 99",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  },
+  {
+    "name": "Treasure 100",
+    "region": "The Vault",
+    "category": [
+      "Treasures"
+    ],
+    "requires": []
+  }
+]

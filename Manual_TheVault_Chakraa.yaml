@@ -1,0 +1,8 @@
+Manual_TheVault_Chakraa:
+    progression_balancing: 50
+    accessibility: items
+    amount_of_keys: 10
+    amount_of_treasure_in_vault: 10
+
+game: Manual_TheVault_Chakraa
+name: Player{number}

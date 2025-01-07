@@ -1,0 +1,102 @@
+[
+  {
+    "count": 100,
+    "name": "Vault Key",
+    "category": [
+      "Vault Keys"
+    ],
+    "progression": true,
+    "value": {"key": 1}
+  },
+  {
+    "count": 1,
+    "name": "Mind Goblin Deez (+5 Vault Keys)",
+    "category": [
+      "Vault Keys"
+    ],
+    "progression": true,
+    "value": {"key": 5}
+  },
+  {
+    "count": 1,
+    "name": "It's Goblin-Engineered! (+5 Vault Keys)",
+    "category": [
+      "Vault Keys"
+    ],
+    "progression": true,
+    "value": {"key": 5}
+  },
+  {
+    "count": 1,
+    "name": "Zizzlecrank with the Drill! (+10 Vault Keys)",
+    "category": [
+      "Vault Keys"
+    ],
+    "progression": true,
+    "value": {"key": 10}
+  },
+  {
+    "count": 1,
+    "name": "Time is Money, Friend. (+10 Vault Keys)",
+    "category": [
+      "Vault Keys"
+    ],
+    "progression": true,
+    "value": {"key": 10}
+  },
+  {
+    "count": 1,
+    "name": "Found a Shiny Rock! (Totally Not a Diamond) (+15 Vault Keys)",
+    "category": [
+      "Vault Keys"
+    ],
+    "progression": true,
+    "value": {"key": 15}
+  },
+  {
+    "count": 1,
+    "name": "Snotgrub drops a Vial of Acid on the lock! (+15 Vault Keys)",
+    "category": [
+      "Vault Keys"
+    ],
+    "progression": true,
+    "value": {"key": 15}
+  },
+  {
+    "count": 1,
+    "name": "Strapping The Vault with a Jetpack and sending it sky-high! (+20 Vault Keys)",
+    "category": [
+      "Vault Keys"
+    ],
+    "progression": true,
+    "value": {"key": 20}
+  },
+  {
+    "count": 1,
+    "name": "STRIKING IT WITH A HUGE FKIN' MACE! (+20 Vault Keys)",
+    "category": [
+      "Vault Keys"
+    ],
+    "progression": true
+    ,
+    "value": {"key": 20}
+  },
+  {
+    "count": 1,
+    "name": "Lining up the Firing Squad and SHOOT IT TO OBLIVIION! (+25 Vault Keys)",
+    "category": [
+      "Vault Keys"
+    ],
+    "progression": true,
+    "value": {"key": 25}
+  },
+  {
+    "count": 1,
+    "name": "Bringing in the Explosives! (+25 Vault Keys)",
+    "category": [
+      "Vault Keys"
+    ],
+    "progression": true,
+    "value": {"key": 25}
+  }
+]

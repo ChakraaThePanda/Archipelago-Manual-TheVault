@@ -9,3 +9,5 @@ Your team of cunning goblin engineers stands before **The Vault**, a treasure tr
 * Some of your Goblin friends can come and help with some heavy-duty tools! There are items that are added to the pool that are worth a certain amount of Keys, for exemple a pretty big one would be "Bringing in the Explosives! (+25 Vault Keys)" that is worth 25 Vault Keys to help your Progression
   * If the amount of Vault Keys you need to find is too low, some Helpers/Tools won't show up in the pool, to keep some balance  
 * Once you have found all the required Keys, your goal is complete and you can loot all of the items!
+
+**Warning**: Be sure to use this in conjunction with other worlds as this will not run as a standalone

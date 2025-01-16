@@ -74,11 +74,10 @@ def before_create_items_filler(item_pool: list, world: World, multiworld: MultiW
 
     # Define items to remove for each breakpoint (thresholds are <10, <20, ..., <100)
     items_to_remove = {
-        10: ["Mind Goblin Deez (+5 Vault Keys)", "It's Goblin-Engineered! (+5 Vault Keys)"],
-        20: ["Zizzlecrank with the Drill! (+10 Vault Keys)", "Time is Money, Friend. (+10 Vault Keys)"],
-        30: ["Found a Shiny Rock! (Totally Not a Diamond) (+15 Vault Keys)", "Snotgrub drops a Vial of Acid on the lock! (+15 Vault Keys)"],
-        40: ["STRIKING IT WITH A HUGE FKIN' MACE! (+20 Vault Keys)", "Strapping The Vault with a Jetpack and sending it sky-high! (+20 Vault Keys)"],
-        50: ["Lining up the Firing Squad and SHOOT IT TO OBLIVIION! (+25 Vault Keys)","Bringing in the Explosives! (+25 Vault Keys)"]
+        20: ["Mind Goblin Deez (+5 Vault Keys)", "Zizzlecrank with the Drill! (+5 Vault Keys)"],
+        40: ["Time is Money, Friend. (+5 Vault Keys)", "Snotgrub drops a Vial of Acid on the lock! (+5 Vault Keys)"],
+        75: ["Lining up the Firing Squad and SHOOT IT TO OBLIVIION! (+10 Vault Keys)", "STRIKING IT WITH A HUGE FKIN' MACE! (+10 Vault Keys)"],
+        100: ["Strapping The Vault with a Jetpack and sending it sky-high! (+10 Vault Keys)","Bringing in the Explosives! (+10 Vault Keys)"]
     }
 
     # Iterate through breakpoints in ascending order

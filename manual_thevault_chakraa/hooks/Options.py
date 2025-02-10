@@ -6,14 +6,14 @@ from ..Helpers import is_option_enabled, get_option_value
 
 class AmountOfKeys(Range):
     """Select the amount of Keys you need to open The Vault"""
-    display_name = "Amount of Keys you need to open The Vault"
+    display_name = "Keys to open The Vault"
     range_start = 1
     range_end = 100
     default = 10
 
 class AmountOfTreasureInVault(Range):
     """Select the amount of Treasure items that are in The Vault"""
-    display_name = "Amount of Treasure items that are in The Vault"
+    display_name = "Treasures in The Vault"
     range_start = 1
     range_end = 100
     default = 10

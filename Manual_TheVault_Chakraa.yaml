@@ -32,7 +32,7 @@ description: Default Manual_TheVault_Chakraa Template
 
 game: Manual_TheVault_Chakraa
 requires:
-  version: 0.5.1 # Version of Archipelago required for this yaml to work as expected.
+  version: 0.6.2 # Version of Archipelago required for this yaml to work as expected.
 
 Manual_TheVault_Chakraa:
   # Game Options
@@ -59,6 +59,10 @@ Manual_TheVault_Chakraa:
     # **Minimal:** ensure what is needed to reach your goal can be acquired.
     full: 50
     minimal: 0
+
+  plando_items:
+    # Generic items plando.
+    []
 
   amount_of_keys:
     # Select the amount of Keys you need to open The Vault
@@ -95,6 +99,12 @@ Manual_TheVault_Chakraa:
     # Start with these items.
     {}
 
+  start_inventory_from_pool:
+    # Start with these items and don't place them in the world.
+    # 
+    # The game decides what the replacement items will be.
+    {}
+
   start_hints:
     # Start with these item's locations prefilled into the ``!hint`` command.
     []
@@ -114,9 +124,3 @@ Manual_TheVault_Chakraa:
   item_links:
     # Share part of your item pool with other players.
     []
-
-  start_inventory_from_pool:
-    # Start with these items and don't place them in the world.
-    # 
-    # The game decides what the replacement items will be.
-    {}

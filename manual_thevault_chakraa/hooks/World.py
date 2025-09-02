@@ -44,7 +44,6 @@ def before_create_regions(world: World, multiworld: MultiWorld, player: int):
 # Called after regions and locations are created, in case you want to see or modify that information. Victory location is included.
 def after_create_regions(world: World, multiworld: MultiWorld, player: int):
     # Use this hook to remove locations from the world
-    locationNamesToRemove: list[str] = [] # List of location names
     items_in_vault = get_option_value(multiworld, player, "amount_of_treasure_in_vault")
 
     # Iterate through all regions in the multiworld

@@ -11,3 +11,9 @@ Your team of cunning goblin engineers stands before **The Vault**, a treasure tr
 * Once you have found all the required Keys, your goal is complete and you can loot all of the items!
 
 **Warning**: Be sure to use this in conjunction with other worlds as this will not run as a standalone
+
+---
+
+### Questions or feedback?
+
+Need help, found a bug, or have an idea? Join my Discord server, [Chakraa's Projects](https://discord.gg/bkk4nVXcjm), and post in this project's channel.

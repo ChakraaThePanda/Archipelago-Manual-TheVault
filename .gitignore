@@ -1,2 +1,3 @@
 *.apworld
 *.yaml
+__pycache__/

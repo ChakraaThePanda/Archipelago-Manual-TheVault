@@ -6,7 +6,6 @@ from BaseClasses import MultiWorld, CollectionState, Item
 # Object classes from Manual -- extending AP core -- representing items and locations that are used in generation
 from ..Items import ManualItem
 from ..Locations import ManualLocation
-from .Options import AmountOfKeys, AmountOfTreasureInVault
 
 # Raw JSON data from the Manual apworld, respectively:
 #          data/game.json, data/items.json, data/locations.json, data/regions.json
@@ -51,25 +50,9 @@ def before_create_regions(world: World, multiworld: MultiWorld, player: int):
 
 # Called after regions and locations are created, in case you want to see or modify that information. Victory location is included.
 def after_create_regions(world: World, multiworld: MultiWorld, player: int):
-    # Use this hook to remove locations from the world
-    items_in_vault = get_option_value(multiworld, player, "amount_of_treasure_in_vault")
-
-    # Iterate through all regions in the multiworld
-    for region in multiworld.regions:
-        if region.player == player:  # Only process regions for the current player
-            for location in list(region.locations):  # Copy of the locations list for safe iteration
-                if location.name.startswith("Treasure "):  # Check if the location name starts with "Treasure "
-                    try:
-                        item_number = int(location.name.split(" ")[1])  # Extract Treasure number
-                        if item_number > items_in_vault:  # Compare with the limit
-                            region.locations.remove(location)  # Remove the location
-                    except ValueError:
-                        # If parsing fails, skip this entry
-                        continue
-
-    # Clear the location cache if the multiworld has this method
-    if hasattr(multiworld, "clear_location_cache"):
-        multiworld.clear_location_cache()
+    # Locations above the amount_of_treasure_in_vault option are filtered out before creation,
+    # in before_is_location_enabled (hooks/Helpers.py)
+    pass
 
 # This hook allows you to access the item names & counts before the items are created. Use this to increase/decrease the amount of a specific item in the pool
 # Valid item_config key/values:
@@ -88,38 +71,27 @@ def before_create_items_starting(item_pool: list, world: World, multiworld: Mult
 
 # The item pool after starting items are processed but before filler is added, in case you want to see the raw item pool at that stage
 def before_create_items_filler(item_pool: list, world: World, multiworld: MultiWorld, player: int) -> list:
-    # Use this hook to remove items from the item pool
-    number_of_keys = get_option_value(multiworld, player, "amount_of_keys")  # Define how many keys we want
+    number_of_keys = get_option_value(multiworld, player, "amount_of_keys")
 
-    # Define items to remove for each breakpoint (thresholds are <10, <20, ..., <100)
-    items_to_remove = {
+    # Bonus key items are only added once the key count reaches their threshold:
+    # the first two at 20+ keys, the next two at 40+, then 75+ and 100
+    bonus_key_items = {
         20: ["Mind Goblin Deez (+5 Vault Keys)", "Zizzlecrank with the Drill! (+5 Vault Keys)"],
         40: ["Time is Money, Friend. (+5 Vault Keys)", "Snotgrub drops a Vial of Acid on the lock! (+5 Vault Keys)"],
         75: ["Lining up the Firing Squad and SHOOT IT TO OBLIVIION! (+10 Vault Keys)", "STRIKING IT WITH A HUGE FKIN' MACE! (+10 Vault Keys)"],
-        100: ["Strapping The Vault with a Jetpack and sending it sky-high! (+10 Vault Keys)","Bringing in the Explosives! (+10 Vault Keys)"]
+        100: ["Strapping The Vault with a Jetpack and sending it sky-high! (+10 Vault Keys)", "Bringing in the Explosives! (+10 Vault Keys)"],
     }
+    removed = {name for threshold, names in bonus_key_items.items() if number_of_keys < threshold for name in names}
+    item_pool = [item for item in item_pool if item.name not in removed]
 
-    # Iterate through breakpoints in ascending order
-    for breakpoint, item_names in sorted(items_to_remove.items()):
-        if number_of_keys < breakpoint:
-            # Remove items in the item_names list from the pool
-            for item_name in item_names:
-                item_pool = [item for item in item_pool if item.name != item_name]
-
-    # Filter "Vault Key" items
+    # The Vault needs 100 keys. Only number_of_keys of them stay in the pool, the rest are given at the start.
     vault_keys = [item for item in item_pool if item.name == "Vault Key"]
+    for vault_key in vault_keys[number_of_keys:]:
+        multiworld.push_precollected(vault_key)
+        item_pool.remove(vault_key)
 
-    # Remove extra "Vault Key" items if there are more than allowed
-    if len(vault_keys) > number_of_keys:
-        excess_keys = len(vault_keys) - number_of_keys
-        for _ in range(excess_keys):
-            vault_key = vault_keys.pop()  # Pop a Vault Key from the list
-            multiworld.push_precollected(vault_key)  # Mark it as a precollected item
-            item_pool.remove(vault_key)  # Remove the Vault Key from the item pool
-
-    item_pool = world.adjust_filler_items(item_pool, [])  # Add filler items
-
-    return item_pool  # Give the modified pool back to the multiworld
+    # Manual adds filler for the freed-up locations right after this hook
+    return item_pool
 
 # The complete item pool prior to being set for generation is provided here, in case you want to make changes to it
 def after_create_items(item_pool: list, world: World, multiworld: MultiWorld, player: int) -> list:

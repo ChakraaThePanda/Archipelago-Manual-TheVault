@@ -15,6 +15,12 @@ def before_is_item_enabled(multiworld: MultiWorld, player: int, item:  dict[str,
 # Use this if you want to override the default behavior of is_option_enabled
 # Return True to enable the location, False to disable it, or None to use the default behavior
 def before_is_location_enabled(multiworld: MultiWorld, player: int, location:  dict[str, Any]) -> Optional[bool]:
+    """Drops "Treasure NN" checks past the player's amount_of_treasure_in_vault option, so they are never created."""
+    from ..Helpers import get_option_value  # imported here, ..Helpers imports this file
+
+    name = location.get("name", "")
+    if name.startswith("Treasure ") and int(name.split(" ")[1]) > get_option_value(multiworld, player, "amount_of_treasure_in_vault"):
+        return False
     return None
 
 # Use this if you want to override the default behavior of is_option_enabled

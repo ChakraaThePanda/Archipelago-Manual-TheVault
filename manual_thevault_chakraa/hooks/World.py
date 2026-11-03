@@ -16,7 +16,22 @@ from ..Data import game_table, item_table, location_table, region_table
 from ..Helpers import is_option_enabled, get_option_value, format_state_prog_items_key, ProgItemsCat
 
 # calling logging.info("message") anywhere below in this file will output the message to both console and log file
-import logging
+import logging, math
+from worlds.generic.Rules import add_item_rule
+from .Rules import vault_settings
+
+# Bonus key items join the pool once the keys needed reach their threshold
+BONUS_KEY_ITEMS = {
+    20: ["Mind Goblin Deez (+5 Vault Keys)", "Zizzlecrank with the Drill! (+5 Vault Keys)"],
+    40: ["Time is Money, Friend. (+5 Vault Keys)", "Snotgrub drops a Vial of Acid on the lock! (+5 Vault Keys)"],
+    75: ["Lining up the Firing Squad and SHOOT IT TO OBLIVIION! (+10 Vault Keys)", "STRIKING IT WITH A HUGE FKIN' MACE! (+10 Vault Keys)"],
+    100: ["Strapping The Vault with a Jetpack and sending it sky-high! (+10 Vault Keys)", "Bringing in the Explosives! (+10 Vault Keys)"],
+}
+KEY_ITEM_NAMES = {"Vault Key"} | {name for names in BONUS_KEY_ITEMS.values() for name in names}
+
+# A Vault's key items can take at most this share of the other games' free locations
+# (the ones not needed for their own progression items)
+MAX_SHARE_OF_OTHER_LOCATIONS = 0.75
 
 ########################################################################################
 ## Order of method calls when the world generates:
@@ -38,11 +53,17 @@ def hook_get_filler_item_name(world: World, multiworld: MultiWorld, player: int)
     return False
 
 def before_generate_early(world: World, multiworld: MultiWorld, player: int) -> None:
-    """
-    This is the earliest hook called during generation, before anything else is done.
-    Use it to check or modify incompatible options, or to set up variables for later use.
-    """
-    pass
+    """Works out the key thresholds for this player, and refuses to generate a Vault without another game to hold its keys."""
+    world.vault = vault_settings(get_option_value(multiworld, player, "amount_of_keys"),
+                                 get_option_value(multiworld, player, "amount_of_treasure_in_vault"),
+                                 get_option_value(multiworld, player, "vault_stages"))
+    world.vault_starting_keys = 0
+
+    if hasattr(multiworld, "generation_is_fake"):  # Universal Tracker
+        return
+    if not [p for p in multiworld.player_ids if multiworld.game[p] != world.game]:
+        raise Exception(f"The Vault ({multiworld.player_name[player]}) can't be played alone: its keys have to be hidden "
+                        "in other games. Add at least one other game to the multiworld.")
 
 # Called before regions and locations are created. Not clear why you'd want this, but it's here. Victory location is included, but Victory event is not placed yet.
 def before_create_regions(world: World, multiworld: MultiWorld, player: int):
@@ -63,7 +84,75 @@ def after_create_regions(world: World, multiworld: MultiWorld, player: int):
 #       will create 5 items that are the "useful trap" class
 # {"Item Name": {ItemClassification.useful: 5}} <- You can also use the classification directly
 def before_create_items_all(item_config: dict[str, int|dict], world: World, multiworld: MultiWorld, player: int) -> dict[str, int|dict]:
+    """Puts the keys needed plus extra_keys_percent more key value in the pool, using bonus key items where they unlock."""
+    keys_required = world.vault["keys_required"]
+    extra_percent = get_option_value(multiworld, player, "extra_keys_percent")
+    values = {name: world.item_name_to_item[name]["value"]["key"] for name in KEY_ITEM_NAMES}
+
+    bonus = [name for threshold, names in BONUS_KEY_ITEMS.items() if keys_required >= threshold for name in names]
+    bonus_value = sum(values[name] for name in bonus)
+
+    def single_keys(percent: int) -> int:
+        return max(0, math.ceil(keys_required * (100 + percent) / 100) - bonus_value)
+
+    # Fewest Vault Keys that still open The Vault, used if the other games turn out to lack room
+    world.vault_min_single_keys = single_keys(0)
+    world.vault_bonus_value = bonus_value
+
+    item_config["Vault Key"] = single_keys(extra_percent)
+    for names in BONUS_KEY_ITEMS.values():
+        for bonus_name in names:
+            item_config[bonus_name] = 1 if bonus_name in bonus else 0
     return item_config
+
+def fit_keys_in_other_games(world: World, multiworld: MultiWorld, player: int):
+    """Key items can only go in other games (Treasures are behind the keys), so keep them to a share of
+    those games' locations, split between every Vault in the multiworld. Runs once every game has
+    created its items, since some games only number their locations at that point."""
+    if hasattr(multiworld, "generation_is_fake"):  # Universal Tracker
+        return
+    other_locations = sum(1 for region in multiworld.regions if multiworld.game[region.player] != world.game
+                          for location in region.locations if location.address is not None)
+    # Locations the other games need for their own progression items aren't free for keys
+    other_progression = sum(1 for item in multiworld.itempool if multiworld.game[item.player] != world.game and item.advancement)
+    vaults = sum(1 for p in multiworld.player_ids if multiworld.game[p] == world.game)
+    room = int(max(0, other_locations - other_progression) * MAX_SHARE_OF_OTHER_LOCATIONS / vaults)
+
+    key_items = [item for item in multiworld.itempool if item.player == player and item.name in KEY_ITEM_NAMES]
+    single_keys = [item for item in key_items if item.name == "Vault Key"]
+    if len(key_items) <= room:
+        return
+
+    name = multiworld.player_name[player]
+    keys_required = world.vault["keys_required"]
+    extra_percent = get_option_value(multiworld, player, "extra_keys_percent")
+
+    def take_out(items: list):
+        # Each key taken out of the pool is replaced by filler, so this world keeps as many items as locations
+        for item in items:
+            multiworld.itempool.remove(item)
+            multiworld.itempool.append(world.create_filler())
+
+    # First lower the extra keys
+    extra_singles = len(single_keys) - world.vault_min_single_keys
+    dropped = min(extra_singles, len(key_items) - room)
+    if dropped > 0:
+        take_out(single_keys[:dropped])
+        single_keys = single_keys[dropped:]
+        percent = max(0, (len(single_keys) + world.vault_bonus_value) * 100 // keys_required - 100)
+        logging.warning(f"The Vault ({name}): extra keys lowered from {extra_percent}% to {percent}%, "
+                        f"the other games don't have enough room to hide more keys.")
+
+    # Still too many: hand out some Vault Keys at the start
+    starting = min(len(single_keys), len(key_items) - dropped - room)
+    if starting > 0:
+        moved = single_keys[:starting]
+        take_out(moved)
+        for item in moved:
+            multiworld.push_precollected(item)
+        world.vault_starting_keys = starting
+        logging.warning(f"The Vault ({name}): you start with {starting} Vault Keys, "
+                        f"the other games don't have enough room to hide all of them.")
 
 # The item pool before starting items are processed, in case you want to see the raw item pool at that stage
 def before_create_items_starting(item_pool: list, world: World, multiworld: MultiWorld, player: int) -> list:
@@ -71,26 +160,6 @@ def before_create_items_starting(item_pool: list, world: World, multiworld: Mult
 
 # The item pool after starting items are processed but before filler is added, in case you want to see the raw item pool at that stage
 def before_create_items_filler(item_pool: list, world: World, multiworld: MultiWorld, player: int) -> list:
-    number_of_keys = get_option_value(multiworld, player, "amount_of_keys")
-
-    # Bonus key items are only added once the key count reaches their threshold:
-    # the first two at 20+ keys, the next two at 40+, then 75+ and 100
-    bonus_key_items = {
-        20: ["Mind Goblin Deez (+5 Vault Keys)", "Zizzlecrank with the Drill! (+5 Vault Keys)"],
-        40: ["Time is Money, Friend. (+5 Vault Keys)", "Snotgrub drops a Vial of Acid on the lock! (+5 Vault Keys)"],
-        75: ["Lining up the Firing Squad and SHOOT IT TO OBLIVIION! (+10 Vault Keys)", "STRIKING IT WITH A HUGE FKIN' MACE! (+10 Vault Keys)"],
-        100: ["Strapping The Vault with a Jetpack and sending it sky-high! (+10 Vault Keys)", "Bringing in the Explosives! (+10 Vault Keys)"],
-    }
-    removed = {name for threshold, names in bonus_key_items.items() if number_of_keys < threshold for name in names}
-    item_pool = [item for item in item_pool if item.name not in removed]
-
-    # The Vault needs 100 keys. Only number_of_keys of them stay in the pool, the rest are given at the start.
-    vault_keys = [item for item in item_pool if item.name == "Vault Key"]
-    for vault_key in vault_keys[number_of_keys:]:
-        multiworld.push_precollected(vault_key)
-        item_pool.remove(vault_key)
-
-    # Manual adds filler for the freed-up locations right after this hook
     return item_pool
 
 # The complete item pool prior to being set for generation is provided here, in case you want to make changes to it
@@ -99,11 +168,15 @@ def after_create_items(item_pool: list, world: World, multiworld: MultiWorld, pl
 
 # Called before rules for accessing regions and locations are created. Not clear why you'd want this, but it's here.
 def before_set_rules(world: World, multiworld: MultiWorld, player: int):
-    pass
+    fit_keys_in_other_games(world, multiworld, player)
 
 # Called after rules for accessing regions and locations are created, in case you want to see or modify that information.
 def after_set_rules(world: World, multiworld: MultiWorld, player: int):
-    # Use this hook to modify the access rules for a given location
+    # keys_outside_vault: never put this player's keys in their own Treasures
+    if is_option_enabled(multiworld, player, "keys_outside_vault"):
+        for location in (location for region in multiworld.get_regions(player) for location in region.locations):
+            if location.name.startswith("Treasure "):
+                add_item_rule(location, lambda item: item.player != player or item.name not in KEY_ITEM_NAMES)
 
     def Example_Rule(state: CollectionState) -> bool:
         # Calculated rules take a CollectionState object and return a boolean
@@ -164,7 +237,13 @@ def after_fill_slot_data(slot_data: dict, world: World, multiworld: MultiWorld, 
 
 # This is called right at the end, in case you want to write stuff to the spoiler log
 def before_write_spoiler(world: World, multiworld: MultiWorld, spoiler_handle) -> None:
-    pass
+    vault = world.vault
+    spoiler_handle.write(f"\n\nThe Vault ({multiworld.player_name[world.player]}):\n")
+    for stage in range(1, vault["stages"] + 1):
+        treasures = [n for n in range(1, len(vault["treasure_stage"])) if vault["treasure_stage"][n] == stage]
+        spoiler_handle.write(f"  Stage {stage}: {vault['stage_keys'][stage]} keys open Treasures {treasures[0]:02d}-{treasures[-1]:02d}\n")
+    if world.vault_starting_keys:
+        spoiler_handle.write(f"  Starting Vault Keys: {world.vault_starting_keys}\n")
 
 # This is called when you want to add information to the hint text
 def before_extend_hint_information(hint_data: dict[int, dict[int, str]], world: World, multiworld: MultiWorld, player: int) -> None:

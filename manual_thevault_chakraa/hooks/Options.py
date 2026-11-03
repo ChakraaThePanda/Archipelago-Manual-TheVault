@@ -32,6 +32,14 @@ class AmountOfKeys(Range):
     range_end = 100
     default = 10
 
+class ExtraKeysPercent(Range):
+    """Adds this percentage of extra key value to the multiworld, on top of the keys needed to open The Vault,
+    so you don't have to find every single one. Bonus key items (worth 5 or 10 keys) count towards this."""
+    display_name = "Extra keys (%)"
+    range_start = 0
+    range_end = 100
+    default = 20
+
 class AmountOfTreasureInVault(Range):
     """Select the amount of Treasure items that are in The Vault"""
     display_name = "Treasures in The Vault"
@@ -39,10 +47,26 @@ class AmountOfTreasureInVault(Range):
     range_end = 100
     default = 10
 
+class VaultStages(Range):
+    """Opens The Vault in stages instead of all at once. With 4 stages, every 25% of the keys opens a quarter
+    of the Treasures. 1 opens everything at once when you have all the keys."""
+    display_name = "Vault stages"
+    range_start = 1
+    range_end = 10
+    default = 1
+
+class KeysOutsideVault(DefaultOnToggle):
+    """Your own keys are never placed inside your own Treasures, so other worlds always hold them,
+    spare keys included."""
+    display_name = "Keys outside The Vault"
+
 # This is called before any manual options are defined, in case you want to define your own with a clean slate or let Manual define over them
 def before_options_defined(options: dict[str, Type[Option[Any]]]) -> dict[str, Type[Option[Any]]]:
     options["amount_of_keys"] = AmountOfKeys
-    options["amount_of_treasure_in_vault"] = AmountOfTreasureInVault  
+    options["extra_keys_percent"] = ExtraKeysPercent
+    options["amount_of_treasure_in_vault"] = AmountOfTreasureInVault
+    options["vault_stages"] = VaultStages
+    options["keys_outside_vault"] = KeysOutsideVault
     return options
 
 # This is called after any manual options are defined, in case you want to see what options are defined or want to modify the defined options

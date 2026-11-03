@@ -3,6 +3,6 @@
   "The Vault": {
     "starting": true,
     "connects_to": [],
-    "requires": "{ItemValue(key:100)}"
+    "requires": ""
   }
 }

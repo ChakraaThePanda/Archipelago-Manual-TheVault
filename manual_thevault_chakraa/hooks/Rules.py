@@ -27,3 +27,30 @@ def anyClassLevel(state: CollectionState, player: int, level: str):
 def requiresMelee():
     """Returns a requires string that checks if the player has unlocked the tank."""
     return "|Figher Level:15| or |Black Belt Level:15| or |Thief Level:15|"
+
+
+#####################################################################
+# The Vault: how many keys each Treasure and the Vault itself need.
+# The numbers are worked out once per player in before_generate_early (hooks/World.py)
+# and stored on the world as world.vault.
+#####################################################################
+import math
+from ..Helpers import format_state_prog_items_key, ProgItemsCat
+
+KEY_VALUE = format_state_prog_items_key(ProgItemsCat.VALUE, "key")
+
+def vault_settings(keys_required: int, treasures: int, stages: int) -> dict:
+    """Keys needed for each stage (index 1..stages) and the stage each Treasure (1..treasures) opens at."""
+    stages = max(1, min(stages, treasures))  # never more stages than Treasures
+    stage_keys = [0] + [math.ceil(stage * keys_required / stages) for stage in range(1, stages + 1)]
+    treasure_stage = [0] + [(n - 1) * stages // treasures + 1 for n in range(1, treasures + 1)]
+    return {"keys_required": keys_required, "stages": stages, "stage_keys": stage_keys, "treasure_stage": treasure_stage}
+
+def TreasureOpen(world: World, state: CollectionState, player: int, treasure: int):
+    """Does the player have enough key value to open the stage this Treasure is in?"""
+    vault = world.vault
+    return state.has(KEY_VALUE, player, vault["stage_keys"][vault["treasure_stage"][treasure]])
+
+def VaultOpen(world: World, state: CollectionState, player: int):
+    """Does the player have every key needed to fully open The Vault?"""
+    return state.has(KEY_VALUE, player, world.vault["keys_required"])

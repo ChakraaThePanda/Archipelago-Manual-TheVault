@@ -6,11 +6,14 @@ Your team of cunning goblin engineers stands before **The Vault**, a treasure tr
 * In your YAML, set up how many Keys you need to find and how much Treasure **The Vault** contains
   * *Be warned that the more items are in The Vault, the longer generation might be since you will be locking ALL of the items behind GOAL*
 * The Vault will open when you find all the Vault Keys as defined in the YAML
+* `extra_keys_percent` (default 20%) hides more keys in the multiworld than you need, so you don't have to find every single one
 * Some of your Goblin friends can come and help with some heavy-duty tools! There are items that are added to the pool that are worth a certain amount of Keys, for example "Bringing in the Explosives! (+10 Vault Keys)" is worth 10 Vault Keys to help your Progression
-  * If the amount of Vault Keys you need to find is too low, some Helpers/Tools won't show up in the pool, to keep some balance  
+  * If the amount of Vault Keys you need to find is too low, some Helpers/Tools won't show up in the pool, to keep some balance
+* `vault_stages` lets The Vault open bit by bit: with 4 stages, every 25% of your keys opens a quarter of the Treasures
+* By default your keys are never hidden in your own Treasures (`keys_outside_vault`), so the other worlds always hold them
 * Once you have found all the required Keys, your goal is complete and you can loot all of the items!
 
-**Warning**: Be sure to use this in conjunction with other worlds as this will not run as a standalone
+**Warning**: The Vault needs other worlds to hide its keys, so it can't be generated on its own. If the other worlds don't have enough room for all your keys, the extra keys are lowered first, then you start with some keys already in hand.
 
 ---
 

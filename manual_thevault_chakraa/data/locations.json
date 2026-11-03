@@ -6,7 +6,7 @@
     "category": [
       "Win Condition"
     ],
-    "requires": []
+    "requires": "{VaultOpen()}"
   },
   {
     "name": "Treasure 01",
@@ -14,7 +14,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(1)}"
   },
   {
     "name": "Treasure 02",
@@ -22,7 +22,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(2)}"
   },
   {
     "name": "Treasure 03",
@@ -30,7 +30,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(3)}"
   },
   {
     "name": "Treasure 04",
@@ -38,7 +38,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(4)}"
   },
   {
     "name": "Treasure 05",
@@ -46,7 +46,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(5)}"
   },
   {
     "name": "Treasure 06",
@@ -54,7 +54,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(6)}"
   },
   {
     "name": "Treasure 07",
@@ -62,7 +62,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(7)}"
   },
   {
     "name": "Treasure 08",
@@ -70,7 +70,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(8)}"
   },
   {
     "name": "Treasure 09",
@@ -78,7 +78,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(9)}"
   },
   {
     "name": "Treasure 10",
@@ -86,7 +86,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(10)}"
   },
   {
     "name": "Treasure 11",
@@ -94,7 +94,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(11)}"
   },
   {
     "name": "Treasure 12",
@@ -102,7 +102,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(12)}"
   },
   {
     "name": "Treasure 13",
@@ -110,7 +110,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(13)}"
   },
   {
     "name": "Treasure 14",
@@ -118,7 +118,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(14)}"
   },
   {
     "name": "Treasure 15",
@@ -126,7 +126,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(15)}"
   },
   {
     "name": "Treasure 16",
@@ -134,7 +134,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(16)}"
   },
   {
     "name": "Treasure 17",
@@ -142,7 +142,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(17)}"
   },
   {
     "name": "Treasure 18",
@@ -150,7 +150,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(18)}"
   },
   {
     "name": "Treasure 19",
@@ -158,7 +158,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(19)}"
   },
   {
     "name": "Treasure 20",
@@ -166,7 +166,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(20)}"
   },
   {
     "name": "Treasure 21",
@@ -174,7 +174,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(21)}"
   },
   {
     "name": "Treasure 22",
@@ -182,7 +182,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(22)}"
   },
   {
     "name": "Treasure 23",
@@ -190,7 +190,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(23)}"
   },
   {
     "name": "Treasure 24",
@@ -198,7 +198,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(24)}"
   },
   {
     "name": "Treasure 25",
@@ -206,7 +206,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(25)}"
   },
   {
     "name": "Treasure 26",
@@ -214,7 +214,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(26)}"
   },
   {
     "name": "Treasure 27",
@@ -222,7 +222,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(27)}"
   },
   {
     "name": "Treasure 28",
@@ -230,7 +230,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(28)}"
   },
   {
     "name": "Treasure 29",
@@ -238,7 +238,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(29)}"
   },
   {
     "name": "Treasure 30",
@@ -246,7 +246,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(30)}"
   },
   {
     "name": "Treasure 31",
@@ -254,7 +254,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(31)}"
   },
   {
     "name": "Treasure 32",
@@ -262,7 +262,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(32)}"
   },
   {
     "name": "Treasure 33",
@@ -270,7 +270,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(33)}"
   },
   {
     "name": "Treasure 34",
@@ -278,7 +278,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(34)}"
   },
   {
     "name": "Treasure 35",
@@ -286,7 +286,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(35)}"
   },
   {
     "name": "Treasure 36",
@@ -294,7 +294,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(36)}"
   },
   {
     "name": "Treasure 37",
@@ -302,7 +302,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(37)}"
   },
   {
     "name": "Treasure 38",
@@ -310,7 +310,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(38)}"
   },
   {
     "name": "Treasure 39",
@@ -318,7 +318,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(39)}"
   },
   {
     "name": "Treasure 40",
@@ -326,7 +326,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(40)}"
   },
   {
     "name": "Treasure 41",
@@ -334,7 +334,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(41)}"
   },
   {
     "name": "Treasure 42",
@@ -342,7 +342,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(42)}"
   },
   {
     "name": "Treasure 43",
@@ -350,7 +350,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(43)}"
   },
   {
     "name": "Treasure 44",
@@ -358,7 +358,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(44)}"
   },
   {
     "name": "Treasure 45",
@@ -366,7 +366,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(45)}"
   },
   {
     "name": "Treasure 46",
@@ -374,7 +374,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(46)}"
   },
   {
     "name": "Treasure 47",
@@ -382,7 +382,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(47)}"
   },
   {
     "name": "Treasure 48",
@@ -390,7 +390,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(48)}"
   },
   {
     "name": "Treasure 49",
@@ -398,7 +398,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(49)}"
   },
   {
     "name": "Treasure 50",
@@ -406,7 +406,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(50)}"
   },
   {
     "name": "Treasure 51",
@@ -414,7 +414,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(51)}"
   },
   {
     "name": "Treasure 52",
@@ -422,7 +422,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(52)}"
   },
   {
     "name": "Treasure 53",
@@ -430,7 +430,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(53)}"
   },
   {
     "name": "Treasure 54",
@@ -438,7 +438,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(54)}"
   },
   {
     "name": "Treasure 55",
@@ -446,7 +446,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(55)}"
   },
   {
     "name": "Treasure 56",
@@ -454,7 +454,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(56)}"
   },
   {
     "name": "Treasure 57",
@@ -462,7 +462,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(57)}"
   },
   {
     "name": "Treasure 58",
@@ -470,7 +470,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(58)}"
   },
   {
     "name": "Treasure 59",
@@ -478,7 +478,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(59)}"
   },
   {
     "name": "Treasure 60",
@@ -486,7 +486,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(60)}"
   },
   {
     "name": "Treasure 61",
@@ -494,7 +494,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(61)}"
   },
   {
     "name": "Treasure 62",
@@ -502,7 +502,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(62)}"
   },
   {
     "name": "Treasure 63",
@@ -510,7 +510,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(63)}"
   },
   {
     "name": "Treasure 64",
@@ -518,7 +518,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(64)}"
   },
   {
     "name": "Treasure 65",
@@ -526,7 +526,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(65)}"
   },
   {
     "name": "Treasure 66",
@@ -534,7 +534,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(66)}"
   },
   {
     "name": "Treasure 67",
@@ -542,7 +542,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(67)}"
   },
   {
     "name": "Treasure 68",
@@ -550,7 +550,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(68)}"
   },
   {
     "name": "Treasure 69",
@@ -558,7 +558,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(69)}"
   },
   {
     "name": "Treasure 70",
@@ -566,7 +566,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(70)}"
   },
   {
     "name": "Treasure 71",
@@ -574,7 +574,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(71)}"
   },
   {
     "name": "Treasure 72",
@@ -582,7 +582,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(72)}"
   },
   {
     "name": "Treasure 73",
@@ -590,7 +590,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(73)}"
   },
   {
     "name": "Treasure 74",
@@ -598,7 +598,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(74)}"
   },
   {
     "name": "Treasure 75",
@@ -606,7 +606,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(75)}"
   },
   {
     "name": "Treasure 76",
@@ -614,7 +614,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(76)}"
   },
   {
     "name": "Treasure 77",
@@ -622,7 +622,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(77)}"
   },
   {
     "name": "Treasure 78",
@@ -630,7 +630,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(78)}"
   },
   {
     "name": "Treasure 79",
@@ -638,7 +638,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(79)}"
   },
   {
     "name": "Treasure 80",
@@ -646,7 +646,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(80)}"
   },
   {
     "name": "Treasure 81",
@@ -654,7 +654,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(81)}"
   },
   {
     "name": "Treasure 82",
@@ -662,7 +662,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(82)}"
   },
   {
     "name": "Treasure 83",
@@ -670,7 +670,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(83)}"
   },
   {
     "name": "Treasure 84",
@@ -678,7 +678,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(84)}"
   },
   {
     "name": "Treasure 85",
@@ -686,7 +686,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(85)}"
   },
   {
     "name": "Treasure 86",
@@ -694,7 +694,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(86)}"
   },
   {
     "name": "Treasure 87",
@@ -702,7 +702,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(87)}"
   },
   {
     "name": "Treasure 88",
@@ -710,7 +710,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(88)}"
   },
   {
     "name": "Treasure 89",
@@ -718,7 +718,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(89)}"
   },
   {
     "name": "Treasure 90",
@@ -726,7 +726,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(90)}"
   },
   {
     "name": "Treasure 91",
@@ -734,7 +734,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(91)}"
   },
   {
     "name": "Treasure 92",
@@ -742,7 +742,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(92)}"
   },
   {
     "name": "Treasure 93",
@@ -750,7 +750,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(93)}"
   },
   {
     "name": "Treasure 94",
@@ -758,7 +758,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(94)}"
   },
   {
     "name": "Treasure 95",
@@ -766,7 +766,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(95)}"
   },
   {
     "name": "Treasure 96",
@@ -774,7 +774,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(96)}"
   },
   {
     "name": "Treasure 97",
@@ -782,7 +782,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(97)}"
   },
   {
     "name": "Treasure 98",
@@ -790,7 +790,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(98)}"
   },
   {
     "name": "Treasure 99",
@@ -798,7 +798,7 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(99)}"
   },
   {
     "name": "Treasure 100",
@@ -806,6 +806,6 @@
     "category": [
       "Treasures"
     ],
-    "requires": []
+    "requires": "{TreasureOpen(100)}"
   }
 ]

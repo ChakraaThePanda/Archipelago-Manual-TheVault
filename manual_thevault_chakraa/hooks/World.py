@@ -53,12 +53,7 @@ def hook_get_filler_item_name(world: World, multiworld: MultiWorld, player: int)
     return False
 
 def before_generate_early(world: World, multiworld: MultiWorld, player: int) -> None:
-    """Works out the key thresholds for this player, and refuses to generate a Vault without another game to hold its keys."""
-    world.vault = vault_settings(get_option_value(multiworld, player, "amount_of_keys"),
-                                 get_option_value(multiworld, player, "amount_of_treasure_in_vault"),
-                                 get_option_value(multiworld, player, "vault_stages"))
-    world.vault_starting_keys = 0
-
+    """Refuses to generate a Vault without another game to hold its keys."""
     if hasattr(multiworld, "generation_is_fake"):  # Universal Tracker
         return
     if not [p for p in multiworld.player_ids if multiworld.game[p] != world.game]:
@@ -67,7 +62,12 @@ def before_generate_early(world: World, multiworld: MultiWorld, player: int) -> 
 
 # Called before regions and locations are created. Not clear why you'd want this, but it's here. Victory location is included, but Victory event is not placed yet.
 def before_create_regions(world: World, multiworld: MultiWorld, player: int):
-    pass
+    # Works out the key thresholds for this player. Done here and not in before_generate_early: for Universal
+    # Tracker, Manual only loads the room's options into the world after before_generate_early has run.
+    world.vault = vault_settings(get_option_value(multiworld, player, "amount_of_keys"),
+                                 get_option_value(multiworld, player, "amount_of_treasure_in_vault"),
+                                 get_option_value(multiworld, player, "vault_stages"))
+    world.vault_starting_keys = 0
 
 # Called after regions and locations are created, in case you want to see or modify that information. Victory location is included.
 def after_create_regions(world: World, multiworld: MultiWorld, player: int):

@@ -1,9 +1,9 @@
 from typing import Optional
 from worlds.AutoWorld import World
-from ..Helpers import clamp, get_items_with_value
+from ..Helpers import clamp, get_items_with_value, format_state_prog_items_key, ProgItemsCat
 from BaseClasses import MultiWorld, CollectionState
 
-import re
+import math, re
 
 # Sometimes you have a requirement that is just too messy or repetitive to write out with boolean logic.
 # Define a function here, and you can use it in a requires string with {function_name()}.
@@ -31,12 +31,9 @@ def requiresMelee():
 
 #####################################################################
 # The Vault: how many keys each Treasure and the Vault itself need.
-# The numbers are worked out once per player in before_generate_early (hooks/World.py)
+# The numbers are worked out once per player in before_create_regions (hooks/World.py)
 # and stored on the world as world.vault.
 #####################################################################
-import math
-from ..Helpers import format_state_prog_items_key, ProgItemsCat
-
 KEY_VALUE = format_state_prog_items_key(ProgItemsCat.VALUE, "key")
 
 def vault_settings(keys_required: int, treasures: int, stages: int) -> dict:
